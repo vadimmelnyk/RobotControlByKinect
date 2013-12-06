@@ -1,0 +1,88 @@
+﻿<Window x:Class="RobotControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Robot Control System by Kinect" Height="700" Width="1366">
+
+    <Grid>
+
+        <TabControl RenderTransformOrigin="0.205,0.224">
+            <TabItem Header="Cameras">
+                <Grid Background="#FFE5E5E5" Margin="0,2,-14,192" Width="1366" RenderTransformOrigin="0.434,1.284">
+                    <Image x:Name="videoImage" Canvas.Left="1" Canvas.Top="10" Margin="0,0,721,10" Width="640" Height="480"/>
+                    <Canvas Background="Transparent" Margin="10,30,13,93" RenderTransformOrigin="0.5,0.5" Cursor="None">
+                        <Canvas.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-0.047"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Canvas.RenderTransform>
+                        <Ellipse Fill="Red" Height="20" Width="20" Name="leftHand" Stroke="White" RenderTransformOrigin="1.375,3" />
+                        <Ellipse Fill="Red" Height="20" Width="20" Name="rightHand" Stroke="White" RenderTransformOrigin="3.7,3.675" />
+
+
+                        <!--<Ellipse Fill="Red" Height="20" Width="20" Name="head" Stroke="White" />-->
+
+                    </Canvas>
+                    <WebBrowser x:Name="browser" Canvas.Left="830" Canvas.Top="27" Margin="676,0,50,0" Width="640"/>
+                    <!--<TextBox Canvas.Left="451" TextWrapping="Wrap" Text="TextBox" Canvas.Top="474" x:Name="InfoBox" FontSize="72" Height="114" Width="624" Margin="350,491,392,-158"/>-->
+                    <TextBlock x:Name="InfoBox" TextWrapping="Wrap" Margin="183,524,255,-202" FontSize="72" Cursor="No" FontWeight="Bold"/>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Configuration">
+                <Grid Background="#FFE5E5E5" Margin="-42,52,42,-53">
+                    <Label Content="Left Hand" HorizontalAlignment="Left" Margin="45,42,0,0" VerticalAlignment="Top" RenderTransformOrigin="-11.421,0.077"/>
+                    <Label Content="X:" HorizontalAlignment="Left" Margin="25,65,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Z:" HorizontalAlignment="Left" Margin="26,94,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="LeftHandX" HorizontalAlignment="Left" Height="23" Margin="50,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66"/>
+                    <TextBox x:Name="LeftHandZ" HorizontalAlignment="Left" Height="23" Margin="50,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66"/>
+                    <Label Content="Right Hand" HorizontalAlignment="Left" Margin="183,42,0,0" VerticalAlignment="Top" RenderTransformOrigin="-11.421,0.077"/>
+                    <Label Content="X:" HorizontalAlignment="Left" Margin="183,65,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Y:" HorizontalAlignment="Left" Margin="183,91,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="RightHandX" HorizontalAlignment="Left" Height="23" Margin="214,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66"/>
+                    <TextBox x:Name="RightHandY" HorizontalAlignment="Left" Height="23" Margin="214,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66"/>
+                    <Label Content="Set camera address:" HorizontalAlignment="Left" Margin="25,182,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="22" Margin="145,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267"/>
+                    <Label Content="Set drive file:" HorizontalAlignment="Left" Margin="25,224,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="22" Margin="145,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267"/>
+                    <Label Content="Set camera address:" HorizontalAlignment="Left" Margin="25,270,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="22" Margin="145,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267"/>
+                    <Label Content="Center" HorizontalAlignment="Left" Margin="341,42,0,0" VerticalAlignment="Top" RenderTransformOrigin="-11.421,0.077"/>
+                    <Label Content="X:" HorizontalAlignment="Left" Margin="321,65,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Y:" HorizontalAlignment="Left" Margin="321,91,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Z:" HorizontalAlignment="Left" Margin="321,122,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="CenterX" HorizontalAlignment="Left" Height="23" Margin="346,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66"/>
+                    <TextBox x:Name="CenterY" HorizontalAlignment="Left" Height="23" Margin="346,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66"/>
+                    <TextBox x:Name="CenterZ" HorizontalAlignment="Left" Height="23" Margin="346,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66"/>
+                    <Label Content="Left Hand Relative" HorizontalAlignment="Left" Margin="476,43,0,0" VerticalAlignment="Top" RenderTransformOrigin="-11.421,0.077"/>
+                    <Label Content="X:" HorizontalAlignment="Left" Margin="456,66,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Z:" HorizontalAlignment="Left" Margin="456,95,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="LeftHandXRel" HorizontalAlignment="Left" Height="23" Margin="480,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66"/>
+                    <TextBox x:Name="LeftHandZRel" HorizontalAlignment="Left" Height="23" Margin="480,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66"/>
+                    <Label Content="Right Hand Relative" HorizontalAlignment="Left" Margin="614,43,0,0" VerticalAlignment="Top" RenderTransformOrigin="-11.421,0.077"/>
+                    <Label Content="X:" HorizontalAlignment="Left" Margin="614,66,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Y:" HorizontalAlignment="Left" Margin="614,92,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="RightHandXRel" HorizontalAlignment="Left" Height="23" Margin="644,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66"/>
+                    <TextBox x:Name="RightHandYRel" HorizontalAlignment="Left" Height="23" Margin="644,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66"/>
+                    <TextBox x:Name="StartText" HorizontalAlignment="Left" Height="23" Margin="562,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+                </Grid>
+            </TabItem>
+
+
+        </TabControl>
+
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>
